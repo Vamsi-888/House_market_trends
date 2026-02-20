@@ -1,0 +1,32 @@
+
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="hero" style="background-image: url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+    <div class="hero-content">
+        <i class="fas fa-home" style="font-size: 4rem; margin-bottom: 1rem; color: #ffa500;"></i>
+        <div class="hero-text">
+        <h1>VISUALIZING HOUSING SALES TRENDS AND ITS PRICES</h1>
+        </div>
+        <a href="#" id="getStartedBtn" class="btn hero-btn">GET STARTED</a>
+    </div>
+</div>
+
+<!-- Loading overlay (hidden by default) -->
+<div id="loadingOverlay" class="loading-overlay" style="display: none;">
+    <div class="spinner"></div>
+    <p>Loading dashboard, please wait...</p>
+</div>
+
+<script>
+    document.getElementById('getStartedBtn').addEventListener('click', function(e) {
+        e.preventDefault(); // Prevent immediate navigation
+        // Show the loading overlay
+        document.getElementById('loadingOverlay').style.display = 'flex';
+        // After 1 second, redirect to dashboard
+        setTimeout(function() {
+            window.location.href = '/dashboard';
+        }, 1000); // 1000ms = 1 second
+    });
+</script>
+{% endblock %}

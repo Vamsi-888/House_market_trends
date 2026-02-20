@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="viz-page">
+    <h1>Story</h1>
+    <div class="tableau-embed">
+        <iframe src="{{ tableau_url }}" width="100%" height="800" frameborder="0"></iframe>
+    </div>
+</div>
+{% endblock %}
